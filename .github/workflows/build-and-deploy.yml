@@ -1,0 +1,104 @@
+name: Build and Deploy
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+env:
+  APP_NAME: NanoCore.Templates
+  VERSION: 10.0.0-preview
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    concurrency:
+      group: ${{ github.repository }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Verify Template
+        shell: pwsh
+        run: |
+          dotnet new install . --force;
+
+          if ($LastExitCode -ne 0)
+          {
+              throw "Install Failed";
+          };
+
+          $shortNames = Get-ChildItem -Path ./NanoCore.Templates/content -Directory | ForEach-Object {
+              $configPath = Join-Path $_.FullName ".template.config/template.json";
+              (Get-Content $configPath -Raw | ConvertFrom-Json).shortName;
+          };
+
+          foreach ($shortName in $shortNames)
+          {
+              dotnet new $shortName -n Scratch.App -o ../scratch/$shortName;
+              dotnet build -c Release ../scratch/$shortName/Scratch.App.sln;
+
+              if ($LastExitCode -ne 0)
+              {
+                  throw "Build Failed: $shortName";
+              };
+          };
+
+      - name: Pack and Push (NuGet.org)
+        if: github.ref == 'refs/heads/master'
+        shell: pwsh
+        run: |
+          dotnet pack -c Release -o nupkgs ./$env:APP_NAME/$env:APP_NAME.csproj /p:PackageVersion=$env:VERSION;
+
+          if ($LastExitCode -ne 0)
+          {
+              throw "NuGet Pack Failed";
+          };
+
+          dotnet nuget push "nupkgs/*.nupkg" `
+              --source https://api.nuget.org/v3/index.json `
+              --api-key ${{ secrets.NUGET_APIKEY }} `
+              --skip-duplicate;
+
+          if ($LastExitCode -ne 0)
+          {
+              throw "Publish Failed";
+          };
+
+      - name: Pack and Push (GitHub Packages)
+        if: github.ref != 'refs/heads/master'
+        shell: pwsh
+        run: |
+          dotnet pack -c Release -o nupkgs ./$env:APP_NAME/$env:APP_NAME.csproj /p:PackageVersion="$env:VERSION.$env:GITHUB_RUN_NUMBER";
+
+          if ($LastExitCode -ne 0)
+          {
+              throw "NuGet Pack Failed";
+          };
+
+          dotnet nuget push "nupkgs/*.nupkg" `
+              --source https://nuget.pkg.github.com/Nano-Core/index.json `
+              --api-key ${{ secrets.GITHUB_TOKEN }} `
+              --skip-duplicate;
+
+          if ($LastExitCode -ne 0)
+          {
+              throw "Publish Failed";
+          };
+
+      - name: GitHub Release
+        if: github.ref == 'refs/heads/master'
+        uses: ncipollo/release-action@v1
+        with:
+          tag: v${{ env.VERSION }}.${{ github.run_number }}
+          name: "Release ${{ env.VERSION }}"
+          body: |
+            Version: ${{ env.VERSION }}
+            Commit: ${{ github.sha }}
+          artifacts: "nupkgs/*"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          draft: false
+          prerelease: ${{ contains(env.VERSION, '-') }}

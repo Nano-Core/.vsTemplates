@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Nano-Core",
+  "classifications": [ "Web", "API", "Nano" ],
+  "identity": "NanoCore.Api.Public",
+  "name": "Nano Core Public API",
+  "description": "A Nano API application pre-configured for public exposure - hardened security headers, CORS, Kubernetes HTTPRoute and metrics, pre-wired with Azure Managed Identity / Kubernetes Workload Identity, Docker, and CI/CD.",
+  "shortName": "nanocore-api-public",
+  "sourceName": "NanoCore.Api.Public",
+  "preferNameDirectory": true,
+  "symbols": {
+    "lowerName": {
+      "type": "generated",
+      "generator": "casing",
+      "parameters": {
+        "source": "name",
+        "casing": "InvariantLowerCase"
+      }
+    },
+    "kebabName": {
+      "type": "derived",
+      "valueSource": "lowerName",
+      "valueTransform": "kebabCase",
+      "replaces": "nanocore-api-public"
+    }
+  },
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  }
+}

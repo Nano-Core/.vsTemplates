@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Nano-Core",
+  "classifications": [ "Web", "API", "Nano" ],
+  "identity": "NanoCore.Api.Internal",
+  "name": "Nano Core Internal API",
+  "description": "A Nano API application pre-configured for internal service-to-service use - no public HTTP policy headers or HTTPS, Kubernetes metrics - pre-wired with Azure Managed Identity / Kubernetes Workload Identity, Docker, and CI/CD.",
+  "shortName": "nanocore-api-internal",
+  "sourceName": "NanoCore.Api.Internal",
+  "preferNameDirectory": true,
+  "symbols": {
+    "lowerName": {
+      "type": "generated",
+      "generator": "casing",
+      "parameters": {
+        "source": "name",
+        "casing": "InvariantLowerCase"
+      }
+    },
+    "kebabName": {
+      "type": "derived",
+      "valueSource": "lowerName",
+      "valueTransform": "kebabCase",
+      "replaces": "nanocore-api-internal"
+    }
+  },
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  }
+}

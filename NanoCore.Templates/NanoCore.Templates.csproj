@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<PackageType>Template</PackageType>
+		<PackageId>NanoCore.Templates</PackageId>
+		<Title>Nano Core Visual Studio Templates</Title>
+		<Version>1.0.0</Version>
+		<Authors>Michael Vivet</Authors>
+		<Owners>Michael Vivet</Owners>
+		<Product>NanoCore.Templates</Product>
+		<Summary>The full set of dotnet new / Visual Studio project templates for Nano-based applications.</Summary>
+		<Description>Installs the complete set of dotnet new project templates for Nano-based applications in one package - currently the minimal Nano API application template (no data provider, no storage, no eventing), pre-wired with Azure Managed Identity federated to Kubernetes Workload Identity, Docker/Kubernetes deployment, and CI/CD. More templates are added to this same package over time.</Description>
+		<PackageTags>dotnet-new;templates;nano;api;azure;kubernetes;managed-identity;workload-identity</PackageTags>
+		<PackageReleaseNotes></PackageReleaseNotes>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryBranch>main</RepositoryBranch>
+		<RepositoryUrl>https://github.com/Nano-Core/.vsTemplates.git</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/Nano-Core/.vsTemplates</PackageProjectUrl>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<ContentTargetFolders>content</ContentTargetFolders>
+		<NoDefaultExcludes>true</NoDefaultExcludes>
+		<NoWarn>$(NoWarn);NU5128</NoWarn>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="content\**\*" Exclude="content\**\bin\**;content\**\obj\**;content\**\.vs\**" />
+		<Compile Remove="**\*.cs" />
+		<None Include="..\LICENSE" Pack="true" PackagePath="" Visible="false" />
+		<None Include="..\icon.png" Pack="true" PackagePath="" Visible="false" />
+		<None Include="README.md" Pack="true" PackagePath="" Visible="false" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,20 @@
+services:
+  nanocore.web.minimal:
+    image: nanocore.web.minimal
+    hostname: nanocore-web-minimal
+    restart: on-failure
+    ports:
+      - 8080:8080
+      - 4443:4443
+    build:
+      context: ../NanoCore.Web.Minimal
+      dockerfile: "Dockerfile.Local"
+    volumes:
+      - ../:/root/.dotnet/https
+    networks:
+      - network
+
+networks:
+  network:
+    name: network
+    driver: bridge
