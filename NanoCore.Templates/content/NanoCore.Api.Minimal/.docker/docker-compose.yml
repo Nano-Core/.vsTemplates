@@ -1,0 +1,17 @@
+services:
+  nanocore.api.minimal:
+    image: nanocore.api.minimal
+    hostname: nanocore-api-minimal
+    restart: on-failure
+    ports:
+      - 8080:8080
+    build:
+      context: ../NanoCore.Api.Minimal
+      dockerfile: "Dockerfile.Local"
+    networks:
+      - network
+
+networks:
+  network:
+    name: network
+    driver: bridge

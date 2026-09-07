@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Nano-Core",
+  "classifications": [ "Web", "Nano" ],
+  "identity": "NanoCore.Web.Minimal",
+  "name": "Nano Core Minimal Web",
+  "description": "A minimal Nano Web application (Razor/Blazor) - hardened security headers, CORS, Kubernetes HTTPRoute and metrics, Docker, and CI/CD.",
+  "shortName": "nanocore-web-minimal",
+  "sourceName": "NanoCore.Web.Minimal",
+  "preferNameDirectory": true,
+  "symbols": {
+    "lowerName": {
+      "type": "generated",
+      "generator": "casing",
+      "parameters": {
+        "source": "name",
+        "casing": "InvariantLowerCase"
+      }
+    },
+    "kebabName": {
+      "type": "derived",
+      "valueSource": "lowerName",
+      "valueTransform": "kebabCase",
+      "replaces": "nanocore-web-minimal"
+    }
+  },
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  }
+}

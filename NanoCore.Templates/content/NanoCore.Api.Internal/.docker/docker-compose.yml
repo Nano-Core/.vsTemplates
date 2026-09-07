@@ -1,0 +1,17 @@
+services:
+  nanocore.api.internal:
+    image: nanocore.api.internal
+    hostname: nanocore-api-internal
+    restart: on-failure
+    ports:
+      - 8080:8080
+    build:
+      context: ../NanoCore.Api.Internal
+      dockerfile: "Dockerfile.Local"
+    networks:
+      - network
+
+networks:
+  network:
+    name: network
+    driver: bridge

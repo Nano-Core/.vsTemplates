@@ -1,0 +1,15 @@
+services:
+  nanocore.console.minimal:
+    image: nanocore.console.minimal
+    hostname: nanocore-console-minimal
+    restart: on-failure
+    build:
+      context: ../NanoCore.Console.Minimal
+      dockerfile: "Dockerfile.Local"
+    networks:
+      - network
+
+networks:
+  network:
+    name: network
+    driver: bridge
