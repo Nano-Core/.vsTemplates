@@ -4,7 +4,7 @@
   "classifications": [ "Web", "API", "Nano" ],
   "identity": "NanoCore.Api.Public",
   "name": "Nano Core Public API",
-  "description": "A Nano API application pre-configured for public exposure - hardened security headers, CORS, Kubernetes HTTPRoute and metrics, pre-wired with Azure Managed Identity / Kubernetes Workload Identity, Docker, and CI/CD.",
+  "description": "A Nano API application pre-configured for public exposure - hardened security headers, CORS, Kubernetes HTTPRoute and metrics, pre-wired with Docker and CI/CD.",
   "shortName": "nanocore-api-public",
   "sourceName": "NanoCore.Api.Public",
   "preferNameDirectory": true,

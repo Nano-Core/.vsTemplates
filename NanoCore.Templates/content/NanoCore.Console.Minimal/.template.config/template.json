@@ -4,7 +4,7 @@
   "classifications": [ "Console", "Nano" ],
   "identity": "NanoCore.Console.Minimal",
   "name": "Nano Core Minimal Console",
-  "description": "A minimal Nano Console application - no data provider, storage, or eventing - pre-wired with Azure Managed Identity / Kubernetes Workload Identity, Docker, and CI/CD.",
+  "description": "A minimal Nano Console application - no data provider, storage, or eventing - pre-wired with Docker and CI/CD.",
   "shortName": "nanocore-console-minimal",
   "sourceName": "NanoCore.Console.Minimal",
   "preferNameDirectory": true,

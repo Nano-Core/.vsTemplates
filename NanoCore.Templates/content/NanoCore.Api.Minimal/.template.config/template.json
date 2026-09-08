@@ -4,7 +4,7 @@
   "classifications": [ "Web", "API", "Nano" ],
   "identity": "NanoCore.Api.Minimal",
   "name": "Nano Core Minimal API",
-  "description": "A minimal Nano API application - no data provider, storage, or eventing - pre-wired with Azure Managed Identity / Kubernetes Workload Identity, Docker, and CI/CD.",
+  "description": "A minimal Nano API application - no data provider, storage, or eventing - pre-wired with Docker and CI/CD.",
   "shortName": "nanocore-api-minimal",
   "sourceName": "NanoCore.Api.Minimal",
   "preferNameDirectory": true,
