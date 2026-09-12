@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NanoCore.Api.Internal.Models", "NanoCore.Api.Internal.Models\NanoCore.Api.Internal.Models.csproj", "{13F7DE49-9C0E-4707-8153-DE953598296A}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NanoCore.Api.Internal", "NanoCore.Api.Internal\NanoCore.Api.Internal.csproj", "{1125AB81-30AB-477E-8197-3592954865D1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".tests", ".tests", "{9CBE8BDF-E2D4-CFB6-4D71-B203AD5191F7}"
@@ -34,7 +36,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".solution", ".solution", "{
 	ProjectSection(SolutionItems) = preProject
 		.dockerignore = .dockerignore
 		.gitignore = .gitignore
-		AGENTS.md = AGENTS.md
 		Dockerfile = Dockerfile
 		icon.png = icon.png
 		LICENSE = LICENSE
@@ -51,6 +52,18 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13F7DE49-9C0E-4707-8153-DE953598296A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F7DE49-9C0E-4707-8153-DE953598296A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F7DE49-9C0E-4707-8153-DE953598296A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{13F7DE49-9C0E-4707-8153-DE953598296A}.Debug|x64.Build.0 = Debug|Any CPU
+		{13F7DE49-9C0E-4707-8153-DE953598296A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{13F7DE49-9C0E-4707-8153-DE953598296A}.Debug|x86.Build.0 = Debug|Any CPU
+		{13F7DE49-9C0E-4707-8153-DE953598296A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F7DE49-9C0E-4707-8153-DE953598296A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F7DE49-9C0E-4707-8153-DE953598296A}.Release|x64.ActiveCfg = Release|Any CPU
+		{13F7DE49-9C0E-4707-8153-DE953598296A}.Release|x64.Build.0 = Release|Any CPU
+		{13F7DE49-9C0E-4707-8153-DE953598296A}.Release|x86.ActiveCfg = Release|Any CPU
+		{13F7DE49-9C0E-4707-8153-DE953598296A}.Release|x86.Build.0 = Release|Any CPU
 		{1125AB81-30AB-477E-8197-3592954865D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1125AB81-30AB-477E-8197-3592954865D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1125AB81-30AB-477E-8197-3592954865D1}.Debug|x64.ActiveCfg = Debug|Any CPU

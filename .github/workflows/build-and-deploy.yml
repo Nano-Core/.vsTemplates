@@ -8,7 +8,7 @@ on:
       - master
 env:
   APP_NAME: NanoCore.Templates
-  VERSION: 10.0.0-preview
+  VERSION: 10.0.0-preview2
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

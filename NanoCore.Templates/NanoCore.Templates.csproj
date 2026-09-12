@@ -10,7 +10,7 @@
 		<Owners>Michael Vivet</Owners>
 		<Product>NanoCore.Templates</Product>
 		<Summary>The full set of dotnet new / Visual Studio project templates for Nano-based applications.</Summary>
-		<Description>Installs the complete set of dotnet new project templates for Nano-based applications in one package - currently the minimal Nano API application template (no data provider, no storage, no eventing), pre-wired with Azure Managed Identity federated to Kubernetes Workload Identity, Docker/Kubernetes deployment, and CI/CD. More templates are added to this same package over time.</Description>
+		<Description>Installs the complete set of dotnet new project templates for Nano-based applications in one package - minimal API, Web, and Console applications, an internal service-to-service API pre-wired with Azure Managed Identity federated to Kubernetes Workload Identity, and a public-facing API - all pre-wired with Docker/Kubernetes deployment and CI/CD. More templates are added to this same package over time.</Description>
 		<PackageTags>dotnet-new;templates;nano;api;azure;kubernetes;managed-identity;workload-identity</PackageTags>
 		<PackageReleaseNotes></PackageReleaseNotes>
 		<RepositoryType>git</RepositoryType>
