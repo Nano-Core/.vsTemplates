@@ -9,6 +9,8 @@ services:
     build:
       context: ../NanoCore.Web.Minimal
       dockerfile: "Dockerfile.Local"
+    env_file:
+      - .env
     volumes:
       - ../:/root/.dotnet/https
     networks:
