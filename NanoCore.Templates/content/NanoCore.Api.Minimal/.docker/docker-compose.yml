@@ -8,6 +8,8 @@ services:
     build:
       context: ../NanoCore.Api.Minimal
       dockerfile: "Dockerfile.Local"
+    env_file:
+      - .env
     networks:
       - network
 
