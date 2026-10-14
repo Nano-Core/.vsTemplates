@@ -27,7 +27,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Nano.App.Web" Version="10.0.21" />
+	  <PackageReference Include="Nano.App.Web" Version="10.0.22" />
 	</ItemGroup>
 
 	<ItemGroup>
