@@ -13,7 +13,7 @@
 		<Description>Installs the complete set of dotnet new project templates for Nano-based applications in one package - minimal API, Web, and Console applications, an internal service-to-service API pre-wired with Azure Managed Identity federated to Kubernetes Workload Identity, and a public-facing API - all pre-wired with Docker/Kubernetes deployment and CI/CD. More templates are added to this same package over time.</Description>
 		<PackageTags>dotnet-new;templates;nano;api;azure;kubernetes;managed-identity;workload-identity</PackageTags>
 		<PackageReleaseNotes>
-		  - Updated Nano NuGets
+		  - Updated to use trusted publishing for NuGet
 		  - Updated skills, prompts and AGENTS.md
 		</PackageReleaseNotes>
 		<RepositoryType>git</RepositoryType>
